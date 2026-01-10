@@ -25,8 +25,9 @@ This blueprint fetches all of these for your Activities and/or Devices, and prov
 
 ## 🛠 Installation
 1. Click the **Blue Import Button** above OR manually copy `sofabaton_scraper.yaml` to your `/config/blueprints/script/` folder.
-2. Go to **Settings > Automations & Scenes > Scripts**.
-3. Click **Create script** and select this blueprint from the list.
+   If installing manually, reload Scripts in **Developer tools > YAML**
+3. Go to **Settings > Automations & Scenes > Scripts**.
+4. Click **Create script** and select this blueprint from the list.
 
 ## 📖 How to use
 1. **Select Remote:** Choose your SofaBaton X2 hub remote entity.
