@@ -214,7 +214,7 @@ sequence:
                                             message: |
                                               **MAC:** `{{ hub_mac }}` | **Device ID:** `{{ dev_id }}`
                                               
-                                              | Key Name | ID |
+                                              | Name | key_id |
                                               | :--- | :--- |
                                               {% for k in dk_data -%}| {{ k.key_name }} | `{{ k.key_id }}` |
                                               {% endfor %}
@@ -228,7 +228,7 @@ sequence:
                                                 command:
                                                   - type: send_favorite_key
                                                   - device_id: {{ dev_id }}
-                                                  - key_id: {{ dk_data[0].key_id if dk_data|length > 0 else "ID" }}
+                                                  - key_id: {{ dk_data[0].key_id if dk_data|length > 0 else "KEY_ID" }}
                                               ```
                                     - sequence: # Key Requester
                                         - delay: "00:00:00.500"
