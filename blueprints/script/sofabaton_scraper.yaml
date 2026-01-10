@@ -170,7 +170,7 @@ sequence:
                                       data:
                                         command:
                                           - type:send_favorite_key
-                                          - activity_id: {{ curr_id }}
+                                          - device_id: {{ curr_id }}
                                           - key_id: {{ f_data[0].key_id if f_data|length > 0 else 'KEY_ID' }}
                                       ```
                                       {% endif %}
