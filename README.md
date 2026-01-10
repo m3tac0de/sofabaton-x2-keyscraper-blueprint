@@ -1,6 +1,6 @@
 # SofaBaton X2 Library Scraper for Home Assistant
 
-[![Open your Home Assistant instance and show the blueprint import dialog with a specific blueprint pre-filled.](https://my.home-assistant.io/badges/blueprint_import.svg)](https://my.home-assistant.io/redirect/blueprint_import/?blueprint_url=https%3A%2F%2Fgithub.com%2Fm3tac0de%2Fsofabaton-x2-keyscraper-blueprint%2Fblob%2Fmain%2Fblueprints%2Fscript%2Fsofabaton_scraper.yaml)
+[![Open your Home Assistant instance and show the blueprint import dialog with this blueprint pre-filled.](https://my.home-assistant.io/badges/blueprint_import.svg)](https://my.home-assistant.io/redirect/blueprint_import/?blueprint_url=https%3A%2F%2Fgithub.com%2Fm3tac0de%2Fsofabaton-x2-keyscraper-blueprint%2Fblob%2Fmain%2Fblueprints%2Fscript%2Fsofabaton_scraper.yaml)
 
 A utility script to extract `activity_id`, `device_id`, and `key_id` codes from the SofaBaton X2 Hub, so they can be used in Automations, Scripts and UIs.
 
@@ -25,8 +25,8 @@ This blueprint fetches all of these for your Activities and/or Devices, and prov
 
 ## 🛠 Installation
 1. Click the **Blue Import Button** above OR manually copy `sofabaton_scraper.yaml` to your `/config/blueprints/script/` folder.
-2. Go to **Settings > Automations & Scenes > Blueprints** and reload scripts.
-3. Create a new script from this blueprint.
+2. Go to **Settings > Automations & Scenes > Scripts**.
+3. Click **Create script** and select this blueprint from the list.
 
 ## 📖 How to use
 1. **Select Remote:** Choose your SofaBaton X2 hub remote entity.
