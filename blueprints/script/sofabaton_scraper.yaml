@@ -157,9 +157,9 @@ sequence:
                                       
                                       {% if f_data|length > 0 %}
                                       ### Favorites
-                                      | Type | Name | key_id |
-                                      | :--- | :--- | :--- |
-                                      {% for fav in f_data -%}| Favorite | {{ fav.key_name }} | `{{ fav.key_id }}` |
+                                      | Type | Name | key_id | device_id |
+                                      | :--- | :--- | :--- | :--- |
+                                      {% for fav in f_data -%}| Favorite | {{ fav.key_name }} | `{{ fav.key_id }}` | `{{ fav.device_id }}` |
                                       {% endfor %}
 
                                       **Example Automation Action (for first key):**
@@ -170,7 +170,7 @@ sequence:
                                       data:
                                         command:
                                           - type:send_favorite_key
-                                          - device_id: {{ curr_id }}
+                                          - device_id: {{ f_data[0].device_id if f_data|length > 0 else 'DEVICE_ID' }}
                                           - key_id: {{ f_data[0].key_id if f_data|length > 0 else 'KEY_ID' }}
                                       ```
                                       {% endif %}
