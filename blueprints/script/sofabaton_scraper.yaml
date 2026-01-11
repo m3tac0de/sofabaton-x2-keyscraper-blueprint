@@ -16,9 +16,9 @@ blueprint:
           entity_id: remote.HUB_NAME
         data:
           command:
-            - type: KEY_TYPE
-            - activity_id: ACTIVITY_ID
-            - key_id: KEY_ID
+            - type:KEY_TYPE
+            - activity_id:ACTIVITY_ID
+            - key_id:KEY_ID
     ```
     
     Automations, scripts and UIs looking to implement this will need KEY_TYPE, ACTIVITY_ID and KEY_ID for each command they intend to trigger.
@@ -130,9 +130,9 @@ sequence:
                                         entity_id: {{ remote_target }}
                                       data:
                                         command:
-                                          - type: send_assigned_key
-                                          - activity_id: {{ curr_id }}
-                                          - key_id: {{ k_data[0].key_id if k_data|length > 0 else 'KEY_ID' }}
+                                          - type:send_assigned_key
+                                          - activity_id:{{ curr_id }}
+                                          - key_id:{{ k_data[0].key_id if k_data|length > 0 else 'KEY_ID' }}
                                       ```
                                       
                                       {% if m_data|length > 0 %}
@@ -150,8 +150,8 @@ sequence:
                                       data:
                                         command:
                                           - type:send_macro_key
-                                          - activity_id: {{ curr_id }}
-                                          - key_id: {{ m_data[0].key_id if m_data|length > 0 else 'KEY_ID' }}
+                                          - activity_id:{{ curr_id }}
+                                          - key_id:{{ m_data[0].key_id if m_data|length > 0 else 'KEY_ID' }}
                                       ```
                                       {% endif %}
                                       
@@ -170,8 +170,8 @@ sequence:
                                       data:
                                         command:
                                           - type:send_favorite_key
-                                          - device_id: {{ f_data[0].device_id if f_data|length > 0 else 'DEVICE_ID' }}
-                                          - key_id: {{ f_data[0].key_id if f_data|length > 0 else 'KEY_ID' }}
+                                          - device_id:{{ f_data[0].device_id if f_data|length > 0 else 'DEVICE_ID' }}
+                                          - key_id:{{ f_data[0].key_id if f_data|length > 0 else 'KEY_ID' }}
                                       ```
                                       {% endif %}
 
@@ -219,16 +219,16 @@ sequence:
                                               {% for k in dk_data -%}| {{ k.key_name }} | `{{ k.key_id }}` |
                                               {% endfor %}
 
-                                              **Direct Device Control:**
+                                              **Example Automation Action (for first key):**
                                               ```yaml
                                               action: remote.send_command
                                               target:
                                                 entity_id: {{ remote_target }}
                                               data:
                                                 command:
-                                                  - type: send_favorite_key
-                                                  - device_id: {{ dev_id }}
-                                                  - key_id: {{ dk_data[0].key_id if dk_data|length > 0 else "KEY_ID" }}
+                                                  - type:send_favorite_key
+                                                  - device_id:{{ dev_id }}
+                                                  - key_id:{{ dk_data[0].key_id if dk_data|length > 0 else "KEY_ID" }}
                                               ```
                                     - sequence: # Key Requester
                                         - delay: "00:00:00.500"
