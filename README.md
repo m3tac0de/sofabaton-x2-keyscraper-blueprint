@@ -11,15 +11,16 @@ Using the `remote` entity the integration adds for each configured hub, commands
 ```yaml
     action: remote.send_command
     target:
-      entity_id: remote.HUB_NAME
+      entity_id: remote.<HUB_NAME>
     data:
       command:
-        - type: KEY_TYPE
-        - activity_id: ACTIVITY_ID
-        - key_id: KEY_ID
+        - type:<KEY_TYPE>             # One of send_assigned_key / send_macro_key / send_favorite_key
+        - activity_id:<ACTIVITY_ID>   # Only when using send_assigned_key / send_macro_key
+        - device_id:<DEVICE_ID>       # Only when using send_favorite_key
+        - key_id:<KEY_ID>
 ```
 
-Automations, scripts and UIs looking to implement this will need KEY_TYPE, ACTIVITY_ID and KEY_ID for each command they intend to trigger.
+Automations, scripts and UIs looking to implement this will need KEY_TYPE, ACTIVITY_ID/DEVICE_ID and KEY_ID for each command they intend to trigger.
 
 This blueprint fetches all of these for your Activities and/or Devices, and provides ready to use YAML showing how to use the codes retrieved.
 
